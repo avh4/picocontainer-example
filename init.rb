@@ -27,6 +27,12 @@ module NameFilter
       .tr('.', '/')
       .tr('-', '')
   end
+  def as_package(input)
+    input
+      .tr('-', '')
+      .tr('/', '.')
+      .tr(' ', '.')
+  end
   def as_java_class(input)
     input
       .gsub(/^[a-z]|[^a-zA-Z0-9]+[a-z]/) { |a| a.upcase }
