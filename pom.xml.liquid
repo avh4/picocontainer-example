@@ -37,6 +37,19 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>0.29</version>
+                <configuration>
+                    <targetClasses>
+                        <param>{{ package }}.*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>{{ package }}.*</param>
+                    </targetTests>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
