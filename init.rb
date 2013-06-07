@@ -4,17 +4,41 @@ require 'yaml'
 require 'fileutils'
 require 'find'
 
+def colorize(text, color_code)
+  "\e[#{color_code}m#{text}\e[0m"
+end
+
+def red(text); colorize(text, 31); end
+def green(text); colorize(text, 32); end
+def blue(text); colorize(text, 34); end
+def cyan(text); colorize(text, 36); end
+
 # Open the properties file
-properties_file = File.open "properties.yaml"
-properties_yaml = properties_file.read
-puts properties_yaml
-puts
+properties_filename = "properties.yaml"
 # Ask the user if the properties are correct
-puts "Are these properties correct?"
-reply = gets
-if reply[0] != "y" then
-  puts "Aborting.  Edit properties.yaml to make changes."
-  exit
+while true
+  puts cyan("== #{properties_filename} ==")
+  properties_file = File.open properties_filename
+  properties_yaml = properties_file.read
+  puts properties_yaml
+  print blue("Continue with these properties [y,n,e,?]? ")
+  $stdout.flush
+  reply = gets
+  case reply[0]
+  when "y"
+    break
+  when "e"
+    system "${EDITOR:=nano} #{properties_filename}"
+    system "git commit #{properties_filename} -m 'Updated project properties.'"
+  when "?"
+    puts red("y - perform project initialization with the current properties")
+    puts red("n - quit; do not perform project initializiation")
+    puts red("e - edit the properties file")
+  when "\n"
+  else
+    puts "Aborting.  Edit #{properties_filename} to make changes."
+    exit
+  end
 end
 
 # Load the properties
@@ -65,7 +89,7 @@ Find.find(".") do |path|
       # process the file
       rendering = Liquid::Template.parse(template).render properties
       # write the file
-      File.open(name, "w").write(rendering)
+      File.open(name, "w") { |f| f.write(rendering) }
       # Delete the template file
       File.delete path
     elsif name == path then
@@ -85,4 +109,8 @@ files_to_delete.each do |file|
   File.delete file
 end
 
-puts "Done!"
+puts "Commiting to git..."
+system("git add -A")
+system("git commit -m 'Initialize project.'")
+system("git clean -df")
+puts "Done!  If you need to undo the initialization, `git reset --hard HEAD^`"
