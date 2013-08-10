@@ -5,8 +5,9 @@ import javax.swing.*;
 public class InfoWindow {
     private JFrame window;
 
-    public InfoWindow(int n) {
-        window = new JFrame("Info Window " + n);
+    public InfoWindow(int n, JFrame window) {
+        this.window = window;
+        window.setTitle("Info Window " + n);
     }
 
     public void show() {

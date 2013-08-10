@@ -8,13 +8,13 @@ public class MainWindow {
     JFrame window;
     private static int n;
 
-    public MainWindow() {
-        window = new JFrame();
+    public MainWindow(JFrame window, final InfoWindowProvider provider) {
+        this.window = window;
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         final JButton button = new JButton("Show Info Window");
         button.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) {
-                InfoWindow infoWindow = new InfoWindow(++n);
+                InfoWindow infoWindow = provider.get(++n);
                 infoWindow.show();
             }
         });
