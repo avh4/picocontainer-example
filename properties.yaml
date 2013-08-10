@@ -1,6 +1,6 @@
 ---
-package : com.example
-project : my-project
-description : ~
-project_url : ~
-github_user : ~
+package : net.avh4.scratch
+project : picocontainer-example
+description : How to use PicoContainer with dynamically-created dependencies
+project_url : http://github.com/avh4/picocontainer-example
+github_user : avh4
