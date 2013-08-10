@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="picocontainer-example" />
+        <module name="picocontainerexample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="picocontainer-example" target="1.7" />
+      <module name="picocontainerexample" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

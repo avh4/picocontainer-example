@@ -20,10 +20,8 @@
         <cucumber.version>1.1.1</cucumber.version>
         <guava.version>14.0.1</guava.version>
         <hamcrest.version>1.2.1</hamcrest.version>
-        <imagecomparison.version>0.2.1</imagecomparison.version>
         <junit.version>4.11</junit.version>
         <mockito.version>1.9.5</mockito.version>
-        <uilayer.version>1.1.0-SNAPSHOT</uilayer.version>
     </properties>
 
     <build>
@@ -55,17 +53,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.picocontainer</groupId>
+            <artifactId>picocontainer</artifactId>
+            <version>2.14.3</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.avh4.framework</groupId>
-            <artifactId>uilayer-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.avh4.framework</groupId>
-            <artifactId>uilayer-swing</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -104,16 +98,6 @@
             <version>1.4</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>net.avh4.util</groupId>
-            <artifactId>imagecomparison</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.avh4.util</groupId>
-            <artifactId>imagecomparison-swing</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -122,16 +106,6 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.avh4.framework</groupId>
-                <artifactId>uilayer-core</artifactId>
-                <version>${uilayer.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.avh4.framework</groupId>
-                <artifactId>uilayer-swing</artifactId>
-                <version>${uilayer.version}</version>
             </dependency>
 
             <dependency>
@@ -168,16 +142,6 @@
                 <groupId>info.cukes</groupId>
                 <artifactId>cucumber-picocontainer</artifactId>
                 <version>${cucumber.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.avh4.util</groupId>
-                <artifactId>imagecomparison</artifactId>
-                <version>${imagecomparison.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.avh4.util</groupId>
-                <artifactId>imagecomparison-swing</artifactId>
-                <version>${imagecomparison.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
