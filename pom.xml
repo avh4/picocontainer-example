@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>{{ package }}</groupId>
-    <artifactId>{{ project }}</artifactId>
+    <groupId>net.avh4.scratch</groupId>
+    <artifactId>picocontainer-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>{{ project }}</name>
-    <description>{{ description }}</description>
-    <url>{{ project_url }}</url>
+    <name>picocontainer-example</name>
+    <description>How to use PicoContainer with dynamically-created dependencies</description>
+    <url>http://github.com/avh4/picocontainer-example</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,10 +43,10 @@
                 <version>0.29</version>
                 <configuration>
                     <targetClasses>
-                        <param>{{ package }}.*</param>
+                        <param>net.avh4.scratch.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>{{ package }}.*</param>
+                        <param>net.avh4.scratch.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="All in {{ project }}" type="JUnit" factoryName="JUnit">
-    <module name="{{ project }}" />
+  <configuration default="false" name="All in picocontainer-example" type="JUnit" factoryName="JUnit">
+    <module name="picocontainer-example" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" value="" />

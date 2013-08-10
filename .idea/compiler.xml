@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="{{ project }}" />
+        <module name="picocontainer-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="{{ project }}" target="1.7" />
+      <module name="picocontainer-example" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

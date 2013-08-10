@@ -1,4 +1,4 @@
-package {{ package }}.{{ project | as_package }}.features;
+package net.avh4.scratch.picocontainerexample.features;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
