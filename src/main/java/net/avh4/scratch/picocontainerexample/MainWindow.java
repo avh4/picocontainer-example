@@ -5,12 +5,10 @@ import javax.swing.*;
 public class MainWindow {
     JFrame window;
 
-    public MainWindow(JFrame window, ShowInfoWindowAction showInfoWindowAction) {
+    public MainWindow(JFrame window, ShowInfoWindowButton showInfoWindowButton) {
         this.window = window;
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        final JButton button = new JButton("Show Info Window");
-        button.addActionListener(showInfoWindowAction);
-        window.add(button);
+        window.add(showInfoWindowButton);
     }
 
     public void show() {
