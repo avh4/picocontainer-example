@@ -13,6 +13,7 @@ public class MainModule {
         pico.addComponent(MainWindow.class);
         pico.addComponent(JFrame.class);
         pico.addComponent(InfoWindowProvider.class);
+        pico.addComponent(ShowInfoWindowAction.class);
         return pico;
     }
 }
